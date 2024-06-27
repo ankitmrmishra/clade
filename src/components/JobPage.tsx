@@ -20,7 +20,7 @@ const JobPage = () => {
         </div>
         <div className=''>
           {aboutJOb.map((job, index) => (
-            <JobAbout {...job} />
+            <JobAbout {...job} key={index} />
           ))}
         </div>
         <div className=''>

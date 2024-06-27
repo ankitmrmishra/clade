@@ -19,7 +19,8 @@ const Navbar = () => {
               title.active == true
                 ? "bg-[#DC4A2D] font-medium  text-white p-4"
                 : " text-[#888888]"
-            )}>
+            )}
+            key={index}>
             <div className='icon'>{title.icon}</div>
             <div className='title'>
               <span>{title.NavTitle}</span>
