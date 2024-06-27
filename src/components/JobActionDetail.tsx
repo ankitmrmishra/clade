@@ -3,9 +3,10 @@ import { TbUsers, TbUserCheck } from "react-icons/tb";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { BiPencil } from "react-icons/bi";
 import { FiMessageSquare } from "react-icons/fi";
+import { cn } from "@/utils/utils";
 const JobActionDetail = () => {
   return (
-    <div className='flex gap-6 flex-col pt-[36px] pl-[20px] pr-[20px] shadow-lg h-full bg-[#FCFCFC]'>
+    <div className='flex gap-6 flex-col pt-[36px] pl-[20px] pr-[20px] pb-[80px] shadow-lg h-full bg-[#FCFCFC]'>
       <div className='flex gap-3'>
         <div className='actionButtons bg-[#FEF4F2] w-[172px] border-[#DC4A2D] border rounded-[8px]'>
           <div className='delete  gap-3 flex justify-center items-center align-middle text-[#DC4A2D] pl-[24px] pr-[24px] pt-[12px] pb-[12px]'>
@@ -24,7 +25,10 @@ const JobActionDetail = () => {
         {data.map((da, idx) => (
           <div
             key={idx}
-            className='users flex justify-between items-center align-middle border-gray-300 border-b-2   pb-5'>
+            className={cn(
+              "users flex justify-between items-center align-middle border-gray-300 border-b-2   pb-5",
+              idx == 3 ? "border-b-0" : ""
+            )}>
             <div className='flex align-middle justify-center items-center text-[#4F4F4F] gap-2'>
               <div className='icon text-lg'>{da.icon}</div>
               <div className='text font-medium'>{da.title}</div>

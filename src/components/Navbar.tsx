@@ -7,15 +7,15 @@ import { FaChevronDown } from "react-icons/fa6";
 
 const Navbar = () => {
   return (
-    <div className='flex justify-between align-middle items-center pt-[24px] pb-6 pl-[40px] pr-[14px] border-b border-[#E7E7E7]'>
+    <div className='flex justify-between align-middle items-center md:pt-[24px] md:pb-6 md:pl-[40px] md:pr-[14px] p-6 border-b border-[#E7E7E7]'>
       <div className='left logo bg-[#E7E7E7] w-[100px] h-[61px] text-[#DC4A2D] flex justify-center items-center align-middle pt-[9px] pb-[9px] pl-[28px] pr-[28px]'>
         <span>Logo</span>
       </div>
-      <div className='center flex justify-between align-middle items-center border border-[#D1D1D1] rounded-[36px] w-[538px] p-2'>
+      <div className='center fixed md:relative bottom-0 bg-white flex justify-between align-middle items-center border border-[#D1D1D1] md:rounded-[36px] md:w-[538px] p-3 -ml-7'>
         {Navitems.map((title, index) => (
           <div
             className={cn(
-              "flex h-[58px] justify-center items-center align-middle gap-2 p-[8px] rounded-[34px] text-xl",
+              "flex md:h-[58px] h-[50px] justify-center items-center align-middle gap-2 p-[8px] rounded-[34px] md:text-xl text-lg",
               title.active == true
                 ? "bg-[#DC4A2D] font-medium  text-white p-4"
                 : " text-[#888888]"

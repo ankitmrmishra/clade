@@ -3,11 +3,11 @@ import React from "react";
 
 const JobsNav = () => {
   return (
-    <div className='flex justify-start  items-center align-middle  h-[67px] border-b border-[#E7E7E7] w-full pl-24 gap-10'>
+    <div className='flex  justify-start  items-center align-middle  h-[67px] border-b border-[#E7E7E7] w-full md:pl-24 p-8 md:gap-10 gap-5'>
       {Navitems.map((items, index) => (
         <div
           className={cn(
-            "text-[20px] flex flex-col justify-center items-center align-middle",
+            "md:text-[20px] text-[13px] flex flex-col justify-center items-center align-middle",
             items.active == true
               ? "text-[#DC4A2D] font-semibold"
               : "text-[#888888] font-medium"
@@ -16,7 +16,7 @@ const JobsNav = () => {
           {items.item}
 
           {items.active == true ? (
-            <div className='relative top-4 w-[60%] h-[2px] bg-[#DC4A2D]'></div>
+            <div className='relative md:top-4 top-[1.4rem] w-[60%] h-[2px] bg-[#DC4A2D]'></div>
           ) : (
             ""
           )}

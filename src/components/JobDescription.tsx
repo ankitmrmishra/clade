@@ -51,52 +51,66 @@ const JobDescription: React.FC<JobDescriptionprops> = ({
 }) => {
   return (
     <div className=' w-full'>
-      <div className='pl-[100px] pt-[20px] title-job-price-place border-b border-[#E7E7E7] pb-[30px]'>
-        <div className='title-area flex justify-start align-middle gap-3  items-center '>
-          <span className='Job-title text-[34px] font-bold'>{JobTitle}</span>
-          <div className='w-[4px] h-[4px] rounded-full bg-slate-300 relative '></div>
-          <span className='time-of-job-posting relative text-sm  text-[#888888]'>
-            {TimeOfPosting}
+      <div className='md:pl-[100px] md:pt-[20px] p-8 title-job-price-place border-b border-[#E7E7E7] md:pb-[30px]'>
+        <div className='title-area flex md:flex-row flex-col justify-start align-middle gap-3  md:items-center '>
+          <span className='Job-title md:text-[34px] text-[22px] font-bold'>
+            {JobTitle}
           </span>
-          <span className='open-or-closed relative '>
-            {OpenORclosed == true ? (
-              <div className='bg-[#ECFDF3] flex justify-center items-center align-middle p-1 rounded-3xl border border-[#91f2b7] gap-1  w-[57px]'>
-                <div
-                  className='w-[6px] h-[6px] rounded-full bg-[#17B26A]
+          <div className='w-[4px] h-[4px] rounded-full bg-slate-300 hidden md:relative md:flex'></div>
+          <div className='flex gap-2 md:justify-center justify-start items-center  align-middle'>
+            <span className='time-of-job-posting relative text-sm  text-[#888888]'>
+              {TimeOfPosting}
+            </span>
+            <span className='open-or-closed relative '>
+              {OpenORclosed == true ? (
+                <div className='bg-[#ECFDF3] flex justify-center items-center align-middle p-1 rounded-3xl border border-[#91f2b7] gap-1  w-[57px]'>
+                  <div
+                    className='w-[6px] h-[6px] rounded-full bg-[#17B26A]
 '></div>
-                <span className='text-[12px] font-medium text-[#067647]'>
-                  Open
-                </span>
-              </div>
-            ) : (
-              <div className='bg-[#fdecec] flex justify-center items-center align-middle p-1 rounded-3xl border border-[#f29191] gap-1  w-[57px]'>
-                <div
-                  className='w-[6px] h-[6px] rounded-full bg-[#b21717]
+                  <span className='text-[12px] font-medium text-[#067647]'>
+                    Open
+                  </span>
+                </div>
+              ) : (
+                <div className='bg-[#fdecec] flex justify-center items-center align-middle p-1 rounded-3xl border border-[#f29191] gap-1  w-[57px]'>
+                  <div
+                    className='w-[6px] h-[6px] rounded-full bg-[#b21717]
 '></div>
-                <span className='text-[12px] font-medium text-[#760606]'>
-                  Closed
-                </span>
-              </div>
-            )}
-          </span>
+                  <span className='text-[12px] font-medium text-[#760606]'>
+                    Closed
+                  </span>
+                </div>
+              )}
+            </span>
+          </div>
         </div>
-        <div className='pay-place flex pt-[24px]  text-[20px] gap-3 text-[#5D5D5D]'>
+
+        {/* /////////////////////////////////////////////////////////////////////////////////////////////////////
+        This is Pay and Job Location  
+//////////////////////////////////////////////////////////////////////////////////////////////////// */}
+
+        <div className='pay-place flex justify-start items-center align-middle pt-[24px] text-[14px] md:text-[20px] gap-3 text-[#5D5D5D]'>
           <div className='location flex justify-center align-middle items-center'>
-            <div className='icon'>
+            <div className='icon text-2xl'>
               <HiOutlineLocationMarker />
             </div>
             <div className='loactionDetail'>{location}</div>
           </div>
-          <div className='w-[4px] h-[4px] rounded-full bg-slate-300 relative top-[13px]'></div>
+          <div className='w-[4px] h-[4px] rounded-full bg-slate-300 relative '></div>
           <div className='pay flex justify-center align-middle items-center'>
-            <div className='icon'>
+            <div className='icon text-2xl '>
               <LiaCoinsSolid />
             </div>
             <div className='payPrice'>{payPrice}</div>
           </div>
         </div>
       </div>
-      <div className='flex pl-[100px] pt-[20px] title-job-price-place border-b border-[#E7E7E7] pb-[30px] gap-32'>
+
+      {/* 
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                             This is Skills and All details 
+     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                         */}
+      <div className='flex md:flex-row flex-col md:pl-[100px] md:pt-[20px] p-8 title-job-price-place border-b border-[#E7E7E7] pb-[30px] md:gap-32 gap-4'>
         <div className='Skills flex flex-col gap-2'>
           <span className='text-[#6E6D6D] text-[14px]'>Skills Required</span>
           {skillsRequired.map((skillsRequired, key) => (
@@ -133,8 +147,6 @@ const JobDescription: React.FC<JobDescriptionprops> = ({
           </span>
         </div>
       </div>
-
-      <div className=''></div>
     </div>
   );
 };
@@ -145,8 +157,10 @@ export const JobAbout: React.FC<JobAbout> = ({
   workLocation,
 }) => {
   return (
-    <div className=' pl-[100px] pt-[20px] title-job-price-place border-b border-[#E7E7E7] pb-[30px] '>
-      <h2 className='text-[14px] text-[#6E6D6D] mb-2'>About The Job</h2>
+    <div className=' md:pl-[100px] md:pt-[20px] p-8 md:text-[16px] text-[14px] title-job-price-place border-b border-[#E7E7E7] pb-[30px] '>
+      <h2 className='md:text-[14px] text-[12px] text-[#6E6D6D] mb-2'>
+        About The Job
+      </h2>
 
       <ol className='list-decimal list-inside mb-6 text-[#3D3D3D] font-medium'>
         {mainDuties.map((duty, index) => (
@@ -178,7 +192,7 @@ export const AboutCompany: React.FC<CompanyAboutprops> = ({
   CompanyName,
 }) => {
   return (
-    <div className='pl-[100px] pt-[20px] w-[776px] mb-10'>
+    <div className='md:pl-[100px] md:pt-[20px] md:w-[776px] md:mb-10 p-8'>
       <div className='Company-Name-Logo flex justify-start gap-4 align-middle items-center'>
         <div>
           <Image
@@ -193,7 +207,7 @@ export const AboutCompany: React.FC<CompanyAboutprops> = ({
           <span>{CompanyName}</span>
         </div>
       </div>
-      <div className='grid grid-cols-2 gap-[15px] mt-10'>
+      <div className='grid md:grid-cols-2 grid-cols-1 gap-[15px] mt-10'>
         {componentsCompany.map((title, key) => (
           <div className='flex flex-col w-[336px]  '>
             <span className='text-[14px] text-[#6E6D6D]'>{title.title}</span>

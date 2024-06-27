@@ -9,7 +9,7 @@ export default function Home() {
     <main className=''>
       <Navbar />
       <JobsNav />
-      <div className='grid grid-cols-4'>
+      <div className='md:grid grid-cols-4 flex flex-col'>
         <div className='col-span-3'>
           <JobPage />
         </div>
