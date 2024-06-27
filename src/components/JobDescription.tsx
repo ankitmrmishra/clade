@@ -209,7 +209,7 @@ export const AboutCompany: React.FC<CompanyAboutprops> = ({
       </div>
       <div className='grid md:grid-cols-2 grid-cols-1 gap-[15px] mt-10'>
         {componentsCompany.map((title, key) => (
-          <div className='flex flex-col w-[336px]  '>
+          <div className='flex flex-col w-[336px]  ' key={key}>
             <span className='text-[14px] text-[#6E6D6D]'>{title.title}</span>
             <span className='text-[16px] text-[#3D3D3D]'>
               {title.description}
