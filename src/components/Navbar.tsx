@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <div className='flex justify-between align-middle items-center md:pt-[24px] md:pb-6 md:pl-[40px] md:pr-[14px] p-6 border-b border-[#E7E7E7]'>
       <div className='left logo bg-[#E7E7E7] w-[100px] h-[61px] text-[#DC4A2D] flex justify-center items-center align-middle pt-[9px] pb-[9px] pl-[28px] pr-[28px]'>
-        <span>Logo</span>
+        <span className='font-semibold'>Logo</span>
       </div>
       <div className='center fixed md:relative bottom-0 bg-white flex justify-between align-middle items-center border border-[#D1D1D1] md:rounded-[36px] md:w-[538px] p-2 max-h-max w-full left-0'>
         {Navitems.map((title, index) => (

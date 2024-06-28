@@ -135,7 +135,7 @@ const JobDescription: React.FC<JobDescriptionprops> = ({
           </span>
         </div>
         <div className='type flex flex-col  '>
-          <span className='text-[#6E6D6D] text-[14px]'>Job Type</span>
+          <span className='text-[#6E6D6D] text-[14px]'>Type</span>
           <span className='text-[#3D3D3D] font-semibold  text-[16px]'>
             {JobType}
           </span>
@@ -162,14 +162,14 @@ export const JobAbout: React.FC<JobAbout> = ({
         About The Job
       </h2>
 
-      <ol className='list-decimal list-inside mb-6 text-[#3D3D3D] font-medium'>
+      <ol className='list-decimal list-inside  text-[#3D3D3D] font-medium'>
         {mainDuties.map((duty, index) => (
           <li key={index}>{duty}</li>
         ))}
       </ol>
 
       {additionalDetails.map((detail, index) => (
-        <div key={index} className='mb-4 text-[#3D3D3D] font-medium'>
+        <div key={index} className=' text-[#3D3D3D] font-medium'>
           <h3 className='font-semibold mb-2'>{detail.title}:</h3>
           <ul className='list-disc list-inside'>
             {detail.items.map((item, itemIndex) => (
